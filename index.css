@@ -1,0 +1,52 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 30px 30px 10px 30px;
+}
+
+div {
+  margin-top: 18px;
+  margin-bottom: 20px;
+}
+
+header {
+  font-size: 30px;
+}
+
+footer {
+  font-size: 10px;
+  line-height: 25px;
+  margin-top: 40px;
+}
+
+#right_now {
+  font-size: 80px;
+}
+
+#forecasts_header {
+  font-size: 50px;
+}
+
+#forecast_3hr {
+  font-size: 40px;
+}
+
+#forecast_6hr {
+  font-size: 40px;
+}
+
+#forecast_12hr {
+  font-size: 40px;
+}
+
+#forecast_1day {
+  font-size: 40px;
+}
+
+#forecast_3day {
+  font-size: 40px;
+}
+
+#forecast_5day {
+  font-size: 40px;
+}
