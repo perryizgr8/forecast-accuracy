@@ -14,8 +14,8 @@ header {
 }
 
 footer {
-  font-size: 10px;
-  line-height: 25px;
+  font-size: 15px;
+  line-height: 20px;
   margin-top: 40px;
 }
 
@@ -24,29 +24,29 @@ footer {
 }
 
 #forecasts_header {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 #forecast_3hr {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 #forecast_6hr {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 #forecast_12hr {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 #forecast_1day {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 #forecast_3day {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 #forecast_5day {
-  font-size: 40px;
+  font-size: 35px;
 }
