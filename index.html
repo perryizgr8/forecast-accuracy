@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Weather forecast accuracy in Bangalore</title>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+</head>
+
+<body>
+    <header>
+        Weather forecast accuracy
+    </header>
+    <div id="right_now">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <div id="forecasts_header">
+        Forecasts for this moment:
+    </div>
+    <div id="forecast_3hr">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <div id="forecast_6hr">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <div id="forecast_12hr">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <div id="forecast_1day">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <div id="forecast_3day">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <div id="forecast_5day">
+        <noscript>No javascript :(</noscript>
+    </div>
+    <footer>
+        Made by perryizgr8.
+    </footer>
+
+    <script>
+        function Get(theUrl) {
+            var Httpreq = new XMLHttpRequest();
+            Httpreq.open("GET", theUrl, false);
+            Httpreq.send(null);
+            return Httpreq.responseText;
+        }
+        var url = "http://35.226.25.102/now.json"
+        var json_obj = JSON.parse(Get(url));
+        json_obj = json_obj[json_obj.constructor.keys(json_obj)[0]]
+        var right_now_div = document.getElementById('right_now');
+        right_now_div.textContent = "Right now, it is " + json_obj.current.main + ".";
+        var right_now_div = document.getElementById('forecast_3hr');
+        right_now_div.textContent = "...3 hours ago: " + json_obj.hr3.main + ".";
+        var right_now_div = document.getElementById('forecast_6hr');
+        right_now_div.textContent = "...6 hours ago: " + json_obj.hr6.main + ".";
+        var right_now_div = document.getElementById('forecast_12hr');
+        right_now_div.textContent = "...12 hours ago: " + json_obj.hr12.main + ".";
+        var right_now_div = document.getElementById('forecast_1day');
+        right_now_div.textContent = "...1 day ago: " + json_obj.day1.main + ".";
+        var right_now_div = document.getElementById('forecast_3day');
+        right_now_div.textContent = "...3 days ago: " + json_obj.day3.main + ".";
+        var right_now_div = document.getElementById('forecast_5day');
+        right_now_div.textContent = "...5 days ago: " + json_obj.day5.main + ".";
+    </script>
+</body>
+
+</html>
