@@ -46,7 +46,7 @@
             Httpreq.send(null);
             return Httpreq.responseText;
         }
-        var url = "https://35.226.25.102/now.json"
+        var url = "http://35.226.25.102/now.json"
         var json_obj = JSON.parse(Get(url));
         json_obj = json_obj[json_obj.constructor.keys(json_obj)[0]]
         var right_now_div = document.getElementById('right_now');
