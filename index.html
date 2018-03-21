@@ -43,21 +43,21 @@
         }
         var url = "http://35.226.25.102/now.json"
         var json_obj = JSON.parse(Get(url));
-        json_obj = json_obj[json_obj.constructor.keys(json_obj)[0]]
+        json_obj_inner = json_obj[json_obj.constructor.keys(json_obj)[0]]
         var right_now_div = document.getElementById('right_now');
-        right_now_div.textContent = "Right now, it is " + json_obj.current.main + ".";
+        right_now_div.textContent = "Right now, it is " + json_obj_inner.current.main + ".";
         var hr3_div = document.getElementById('forecast_3hr');
-        hr3_div.textContent = "...3 hours ago: " + json_obj.hr3.main + ".";
+        hr3_div.textContent = "...3 hours ago: " + json_obj_inner.hr3.main + ".";
         var hr6_div = document.getElementById('forecast_6hr');
-        hr6_div.textContent = "...6 hours ago: " + json_obj.hr6.main + ".";
+        hr6_div.textContent = "...6 hours ago: " + json_obj_inner.hr6.main + ".";
         var hr12_div = document.getElementById('forecast_12hr');
-        hr12_div.textContent = "...12 hours ago: " + json_obj.hr12.main + ".";
+        hr12_div.textContent = "...12 hours ago: " + json_obj_inner.hr12.main + ".";
         var day1_div = document.getElementById('forecast_1day');
-        day1_div.textContent = "...1 day ago: " + json_obj.day1.main + ".";
+        day1_div.textContent = "...1 day ago: " + json_obj_inner.day1.main + ".";
         var day3_div = document.getElementById('forecast_3day');
-        day3_div.textContent = "...3 days ago: " + json_obj.day3.main + ".";
+        day3_div.textContent = "...3 days ago: " + json_obj_inner.day3.main + ".";
         var day5_div = document.getElementById('forecast_5day');
-        day5_div.textContent = "...5 days ago: " + json_obj.day5.main + ".";
+        day5_div.textContent = "...5 days ago: " + json_obj_inner.day5.main + ".";
     </script>
 </body>
 
