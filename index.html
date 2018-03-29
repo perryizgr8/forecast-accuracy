@@ -43,22 +43,143 @@
         }
         var url = "http://35.226.25.102/now.json"
         var json_obj = JSON.parse(Get(url));
+
+        function weather_id_to_word(id) {
+            if ((id >= 200) && (id < 300))  {
+                return "thunderstormy";
+            } else if ((id >= 300) && (id < 400)) {
+                return "drizzling";
+            } else if ((id >= 500) && (id < 600)) {
+                return "raining";
+            } else if ((id >= 600) && (id < 700)) {
+                return "snowing";
+            } else if ((id >= 800) && (id <= 804)) {
+                return "cloudy";
+            } else if ((id >= 700) && (id < 800)) {
+                switch (id) {
+                    case 701:
+                        return "misty";
+                        break;
+                    case 711:
+                        return "smoky";
+                        break;
+                    case 721:
+                        return "hazy";
+                        break;
+                    case 731:
+                        return "sandy";
+                        break;
+                    case 741:
+                        return "foggy";
+                        break;
+                    case 751:
+                        return "sandy";
+                        break;
+                    case 761:
+                        return "dusty";
+                        break;
+                    case 762:
+                        return "volcanic";
+                        break;
+                    case 771:
+                        return "squally";
+                        break;
+                    case 781:
+                        return "a tornado";
+                        break;
+                    default:
+                        return "atmospheric";
+                        break;
+                }
+            } else if ((id >= 800) && (id < 900)) {
+                switch (id) {
+                    case 800:
+                        return "clear";
+                        break;
+                    case 801:
+                        return "slightly cloudy";
+                        break;
+                    case 804:
+                        return "overcast";
+                        break;                
+                    default:
+                        return "cloudy";
+                        break;
+                }
+            } else if ((id >= 900) && (id < 1000)) {
+                switch (id) {
+                    case 900:
+                        return "a tornado";
+                        break;
+                    case 901:
+                        return "stormy";
+                        break;
+                    case 902:
+                        return "a hurricane";
+                        break;
+                    case 903:
+                        return "cold";
+                        break;
+                    case 904:
+                        return "hot";
+                        break;
+                    case 905:
+                        return "windy";
+                        break;
+                    case 906:
+                        return "a halestorm";
+                        break;
+                    case 951:
+                        return "calm";
+                        break;
+                    case 952:
+                    case 953:
+                        return "slightly breezy";
+                        break;
+                    case 954:
+                        return "breezy";
+                        break;
+                    case 955:
+                    case 956:
+                        return "quite breezy";
+                        break;
+                    case 957:
+                    case 958:
+                    case 959:
+                        return "a gale";
+                        break;
+                    case 960:
+                    case 961:
+                        return "stormy";
+                        break;
+                    case 962:
+                        return "a hurricane";
+                        break;
+                    default:
+                        return "somewhat unusual";
+                        break;
+                }
+            } else {
+                return "unfathomably mysterious";
+            }
+        }
         json_obj_inner = json_obj[json_obj.constructor.keys(json_obj)[0]]
         var right_now_div = document.getElementById('right_now');
-        right_now_div.textContent = "Right now, it is " + json_obj_inner.current.main + ".";
+        right_now_div.textContent = "Right now, it is " + weather_id_to_word(json_obj_inner.current.id) + ".";
         var hr3_div = document.getElementById('forecast_3hr');
-        hr3_div.textContent = "...3 hours ago: " + json_obj_inner.hr3.main + ".";
+        hr3_div.textContent = "...3 hours ago: " + weather_id_to_word(json_obj_inner.hr3.id) + ".";
         var hr6_div = document.getElementById('forecast_6hr');
-        hr6_div.textContent = "...6 hours ago: " + json_obj_inner.hr6.main + ".";
+        hr6_div.textContent = "...6 hours ago: " + weather_id_to_word(json_obj_inner.hr6.id) + ".";
         var hr12_div = document.getElementById('forecast_12hr');
-        hr12_div.textContent = "...12 hours ago: " + json_obj_inner.hr12.main + ".";
+        hr12_div.textContent = "...12 hours ago: " + weather_id_to_word(json_obj_inner.hr12.id) + ".";
         var day1_div = document.getElementById('forecast_1day');
-        day1_div.textContent = "...1 day ago: " + json_obj_inner.day1.main + ".";
+        day1_div.textContent = "...1 day ago: " + weather_id_to_word(json_obj_inner.day1.id) + ".";
         var day3_div = document.getElementById('forecast_3day');
-        day3_div.textContent = "...3 days ago: " + json_obj_inner.day3.main + ".";
+        day3_div.textContent = "...3 days ago: " + weather_id_to_word(json_obj_inner.day3.id) + ".";
         var day5_div = document.getElementById('forecast_5day');
-        day5_div.textContent = "...5 days ago: " + json_obj_inner.day5.main + ".";
+        day5_div.textContent = "...5 days ago: " + weather_id_to_word(json_obj_inner.day5.id) + ".";
     </script>
 </body>
 
 </html>
+
