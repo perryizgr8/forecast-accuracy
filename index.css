@@ -2,6 +2,16 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   padding: 30px 30px 10px 30px;
+  background-color: black;
+  color: white;
+}
+
+a:link {
+  color: whitesmoke;
+}
+
+a:visited {
+  color: whitesmoke;
 }
 
 div {
