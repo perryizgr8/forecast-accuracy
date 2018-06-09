@@ -30,7 +30,8 @@
     <div id="forecast_5day">
     </div>
     <footer>
-        Made by perryizgr8.<br/>
+        Made by perryizgr8.
+        <br/>
         <a href="https://github.com/perryizgr8/forecast-accuracy">Pull requests appreciated</a> :)
     </footer>
 
@@ -41,11 +42,11 @@
             Httpreq.send(null);
             return Httpreq.responseText;
         }
-        var url = "http://35.226.25.102/now.json"
+        var url = "http://35.224.104.7/now.json"
         var json_obj = JSON.parse(Get(url));
 
         function weather_id_to_word(id) {
-            if ((id >= 200) && (id < 300))  {
+            if ((id >= 200) && (id < 300)) {
                 return "thunderstormy";
             } else if ((id >= 300) && (id < 400)) {
                 return "drizzling";
@@ -101,7 +102,7 @@
                         break;
                     case 804:
                         return "overcast";
-                        break;                
+                        break;
                     default:
                         return "cloudy";
                         break;
@@ -182,4 +183,3 @@
 </body>
 
 </html>
-
