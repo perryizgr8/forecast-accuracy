@@ -166,6 +166,11 @@
             }
         }
         json_obj_inner = json_obj[json_obj.constructor.keys(json_obj)[0]]
+        var data_timestamp = json_obj.constructor.keys(json_obj)[0];
+        var now_timestamp = Math.floor((new Date()).getTime() / 1000);
+        if ((now_timestamp - data_timestamp) > 3 * 60 * 60) {
+            console.log("Warning! Data is more than 3 hours old : " + (now_timestamp - data_timestamp));
+        }
         console.log(json_obj);
         console.log("current id = " + json_obj_inner.current.id + " " + weather_id_to_word(json_obj_inner.current.id));
         console.log("3 hours id = " + json_obj_inner.hr3.id + " " + weather_id_to_word(json_obj_inner.hr3.id));
