@@ -29,6 +29,9 @@
     </div>
     <div id="forecast_5day">
     </div>
+    <div id="prediction_match">
+        Calculating...
+    </div>
     <footer>
         Made by perryizgr8.
         <br />
@@ -169,16 +172,56 @@
         right_now_div.textContent = "Right now, it is " + weather_id_to_word(json_obj_inner.current.id) + ".";
         var hr3_div = document.getElementById('forecast_3hr');
         hr3_div.textContent = "...3 hours ago: " + weather_id_to_word(json_obj_inner.hr3.id) + ".";
+        var pred_matches = 0;
+        if (weather_id_to_word(json_obj_inner.hr3.id) == weather_id_to_word(json_obj_inner.current.id)) {
+            hr3_div.style.color = "green";
+            pred_matches = pred_matches + 1;
+        } else {
+            hr3_div.style.color = "red";
+        }
         var hr6_div = document.getElementById('forecast_6hr');
         hr6_div.textContent = "...6 hours ago: " + weather_id_to_word(json_obj_inner.hr6.id) + ".";
+        if (weather_id_to_word(json_obj_inner.hr6.id) == weather_id_to_word(json_obj_inner.current.id)) {
+            hr6_div.style.color = "green";
+            pred_matches = pred_matches + 1;
+        } else {
+            hr6_div.style.color = "red";
+        }
         var hr12_div = document.getElementById('forecast_12hr');
         hr12_div.textContent = "...12 hours ago: " + weather_id_to_word(json_obj_inner.hr12.id) + ".";
+        if (weather_id_to_word(json_obj_inner.hr12.id) == weather_id_to_word(json_obj_inner.current.id)) {
+            hr12_div.style.color = "green";
+            pred_matches = pred_matches + 1;
+        } else {
+            hr12_div.style.color = "red";
+        }
         var day1_div = document.getElementById('forecast_1day');
         day1_div.textContent = "...1 day ago: " + weather_id_to_word(json_obj_inner.day1.id) + ".";
+        if (weather_id_to_word(json_obj_inner.day1.id) == weather_id_to_word(json_obj_inner.current.id)) {
+            day1_div.style.color = "green";
+            pred_matches = pred_matches + 1;
+        } else {
+            day1_div.style.color = "red";
+        }
         var day3_div = document.getElementById('forecast_3day');
         day3_div.textContent = "...3 days ago: " + weather_id_to_word(json_obj_inner.day3.id) + ".";
+        if (weather_id_to_word(json_obj_inner.day3.id) == weather_id_to_word(json_obj_inner.current.id)) {
+            day3_div.style.color = "green";
+            pred_matches = pred_matches + 1;
+        } else {
+            day3_div.style.color = "red";
+        }
         var day5_div = document.getElementById('forecast_5day');
         day5_div.textContent = "...5 days ago: " + weather_id_to_word(json_obj_inner.day5.id) + ".";
+        if (weather_id_to_word(json_obj_inner.day5.id) == weather_id_to_word(json_obj_inner.current.id)) {
+            day5_div.style.color = "green";
+            pred_matches = pred_matches + 1;
+        } else {
+            day5_div.style.color = "red";
+        }
+        console.log(pred_matches + " out of 6 matches");
+        var pred_div = document.getElementById('prediction_match');
+        pred_div.textContent = Math.floor(pred_matches * 100 / 6) + "% accuracy";
     </script>
 </body>
 

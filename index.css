@@ -38,25 +38,29 @@ footer {
 }
 
 #forecast_3hr {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #forecast_6hr {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #forecast_12hr {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #forecast_1day {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #forecast_3day {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 #forecast_5day {
-  font-size: 35px;
+  font-size: 25px;
+}
+
+#prediction_match {
+  font-size: 45px
 }
