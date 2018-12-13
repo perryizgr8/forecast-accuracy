@@ -57,8 +57,6 @@
                 return "raining";
             } else if ((id >= 600) && (id < 700)) {
                 return "snowing";
-            } else if ((id >= 800) && (id <= 804)) {
-                return "cloudy";
             } else if ((id >= 700) && (id < 800)) {
                 switch (id) {
                     case 701:
@@ -168,6 +166,14 @@
             }
         }
         json_obj_inner = json_obj[json_obj.constructor.keys(json_obj)[0]]
+        console.log(json_obj);
+        console.log("current id = " + json_obj_inner.current.id + " " + weather_id_to_word(json_obj_inner.current.id));
+        console.log("3 hours id = " + json_obj_inner.hr3.id + " " + weather_id_to_word(json_obj_inner.hr3.id));
+        console.log("6 hours id = " + json_obj_inner.hr6.id + " " + weather_id_to_word(json_obj_inner.hr6.id));
+        console.log("12 hours id = " + json_obj_inner.hr12.id + " " + weather_id_to_word(json_obj_inner.hr12.id));
+        console.log("1 day id = " + json_obj_inner.day1.id + " " + weather_id_to_word(json_obj_inner.day1.id));
+        console.log("3 days id = " + json_obj_inner.day3.id + " " + weather_id_to_word(json_obj_inner.day3.id));
+        console.log("5 days id = " + json_obj_inner.day5.id + " " + weather_id_to_word(json_obj_inner.day5.id));
         var right_now_div = document.getElementById('right_now');
         right_now_div.textContent = "Right now, it is " + weather_id_to_word(json_obj_inner.current.id) + ".";
         var hr3_div = document.getElementById('forecast_3hr');
