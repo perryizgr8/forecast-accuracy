@@ -30,11 +30,11 @@ footer {
 }
 
 #right_now {
-  font-size: 80px;
+  font-size: 75px;
 }
 
 #forecasts_header {
-  font-size: 45px;
+  font-size: 40px;
 }
 
 #forecast_3hr {
@@ -62,5 +62,9 @@ footer {
 }
 
 #prediction_match {
-  font-size: 45px
+  font-size: 40px
+}
+
+#graph_link {
+  font-size: 20px
 }
